@@ -13,3 +13,11 @@ class UserModel(AbstractUser):
 
     def __str__(self):
         return f'{self.username}'
+
+class basicUserInfoModel(models.Model):
+
+    name = models.CharField(null=True, max_length=100)
+    address = models.TextField(null=True)
+    phone = models.CharField(null=True, max_length=15)
+    created_at = models.DateTimeField(auto_now_add=True, null=True)
+    modified_at = models.DateTimeField(auto_now=True, null=True)

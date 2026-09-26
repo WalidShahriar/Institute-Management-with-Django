@@ -1,6 +1,7 @@
 from django.contrib import admin
-from authApp.models import UserModel
+from authApp.models import UserModel, basicUserInfoModel
 
 admin.site.register([
-    UserModel
+    UserModel,
+    basicUserInfoModel
 ])
