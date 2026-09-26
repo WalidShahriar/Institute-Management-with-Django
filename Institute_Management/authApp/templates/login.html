@@ -1,5 +1,6 @@
 {% extends 'master/base.html' %}
 
+{% load crispy_forms_tags %}
 
 {% block title %}
     Login
@@ -8,6 +9,16 @@
 
 {% block body %}
 
-    <h1 my-3>Login Page</h1>
+    <h1 class="my-5">Login</h1>
+
+    <form method="POST">
+        {% csrf_token %}
+
+        {{form_data | crispy}}
+
+        <div class="mb-3">
+            <button type="submit" class="btn btn-primary form-control">Login</button>
+        </div>
+    </form>
 
 {% endblock body %}
