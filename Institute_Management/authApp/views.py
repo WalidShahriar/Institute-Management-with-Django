@@ -1,3 +1,10 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from authApp.models import UserModel
 
-# Create your views here.
+
+
+def login_view(request):
+
+
+    return render(request, 'login.html')
+
