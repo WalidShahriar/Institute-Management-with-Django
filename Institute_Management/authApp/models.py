@@ -14,7 +14,7 @@ class UserModel(AbstractUser):
     def __str__(self):
         return f'{self.username}'
 
-class basicUserInfoModel(models.Model):
+class BasicUserInfoModel(models.Model):
 
     name = models.CharField(null=True, max_length=100)
     address = models.TextField(null=True)
