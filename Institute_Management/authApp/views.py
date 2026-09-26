@@ -13,8 +13,18 @@ def login_view(request):
         'form_data' : form_data
     }
 
+    if request.method == 'POST':
+        form_data = AuthenticationForm(request, request.POST)
+        if form_data.is_valid():
+            user = form_data.get_user()
+            if user:
+                login(request, user)
+                messages.success(request, "Successfully Logged-In!")
+                return redirect('dashboard')
+
     return render(request, 'login.html', context)
 
+@login_required
 def logout_view(request):
 
     logout(request)
