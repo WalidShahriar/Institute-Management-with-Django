@@ -12,4 +12,6 @@ class StudentModel(BasicUserInfoModel):
     roll_no = models.CharField(null=True, max_length=20)
     image = models.ImageField(null=True, upload_to='media/student_img')
 
+    def __str__(self):
+        return f'{self.name}'
 
