@@ -2,36 +2,30 @@
 
 
 {% block title %}
-    Student List
+    Course Categories
 {% endblock title %}
 
 
 {% block body %}
-    <h1 class="my-5">Student List</h1>
-    <a href="{% url 'add_student' %}" class="btn btn-success">Add Student</a>
+    <h1 class="my-5">Course Category List</h1>
+    <a href="{% url 'add_course_category' %}" class="btn btn-success">Add Course Category</a>
     <table class="table table-striped">
         <thead>
             <tr>
                 <th>SL</th>
                 <th>Name</th>
-                <th>Roll</th>
-                <th>Image</th>
                 <th>Action</th>
             </tr>
         </thead>
         <tbody>
 
-            {% for data in student_list %}
+            {% for data in course_category_list %}
                 <tr>
                     <td>{{forloop.counter}}</td>
                     <td>{{data.name}}</td>
-                    <td>{{data.roll_no}}</td>
                     <td>
-                        <img src="{{data.image.url}}" width="50px" alt="">
-                    </td>
-                    <td>
-                        <a href="#" class="btn btn-primary">Edit</a>
-                        <a href="#" class="btn btn-danger">Delete</a>
+                        <a href="{% url 'edit_course_category' data.id %}" class="btn btn-primary">Edit</a>
+                        <a href="{% url 'delete_course_category' data.id %}" class="btn btn-danger">Delete</a>
                     </td>
                 </tr>
             {% endfor %}
