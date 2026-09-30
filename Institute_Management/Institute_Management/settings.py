@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'authApp',
     'generalApp',
     'studentApp',
+    'teacherApp',
     'courseApp',
 ]
 
